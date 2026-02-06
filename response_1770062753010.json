@@ -1,0 +1,7 @@
+{
+  "business_id": "28",
+  "credit_metric_used": "person_age",
+  "credit_value": 28,
+  "risk_level": "Low Risk",
+  "recommendation": "Eligible for MSME loan"
+}
