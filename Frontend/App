@@ -1,0 +1,19 @@
+import React, { useEffect, useState } from "react";
+
+const API_BASE = "http://127.0.0.1:8000";
+
+function App() {
+  const [businessIds, setBusinessIds] = useState([]);
+  const [selectedId, setSelectedId] = useState("");
+  const [result, setResult] = useState(null);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    fetch(`${API_BASE}/business_ids`)
+      .then(res => res.json())
+      .then(data => setBusinessIds(data))
+      .catch(err => {
+        console.error(err);
+        setError("Backend not reachable. Is FastAPI running?");
+      });
+  }, []);
